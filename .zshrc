@@ -5,14 +5,12 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# sensitive completion must be off. _ and - will be interchangeable.  # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -75,6 +73,10 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+. /usr/local/lib/python3.4/dist-packages/powerline/bindings/zsh/powerline.zsh
+
+ZSH_THEME="agnoster"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -86,3 +88,6 @@ source $ZSH/oh-my-zsh.sh
 alias open='xdg-open'
 
 alias rosinit='source /opt/ros/indigo/setup.sh'
+alias tmux='tmux -2'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

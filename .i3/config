@@ -147,6 +147,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        i3bar_command i3bar
         font pango:DejaVu Sans Mono, Icons 9 
 }
 
@@ -159,3 +160,4 @@ exec ssh-agent
 exec ssh-add ~/.ssh/github
 
 bindsym $mod+ctrl+L exec "i3lock"
+

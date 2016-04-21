@@ -15,6 +15,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'rust-lang/rust.vim'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " more Plugin commands
@@ -62,6 +63,8 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 map <C-n> :NERDTreeToggle<CR>
+
+" theme
 
 " normal old stuff
 set number
