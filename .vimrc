@@ -16,7 +16,15 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'rust-lang/rust.vim'
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-dispatch'
+Plugin 'janko-m/vim-test'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " more Plugin commands
 " ...
@@ -55,14 +63,25 @@ let g:syntastic_check_on_wq = 0
 "YCM settings
 let g:ycm_python_binary_path = '/usr/bin/python3'
 
-
+"Rainbow settings
 let g:rainbow_active = 1 " activate rainbow parenthasis
+
+"Powerline settings
+"let g:powerline_pycmd = 'py3'
 
 " NERDtree settings
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.html setlocal textwidth=80
+
 map <C-n> :NERDTreeToggle<CR>
+
+"vim-test settings
+let test#strategy = "dispatch"
+let test#python#runner = 'nose'
 
 " theme
 
@@ -79,12 +98,14 @@ set ai "Auto indent
 set si "Smart indent
 set incsearch "Incremental search (its cool!)
 set t_Co=256
-set term=screen-256color
+"set term=screen-256color
 inoremap jj <Esc>
 set wrap linebreak nolist
 set relativenumber
 set wildmode=longest,list,full
 set wildmenu
 set cursorline
+set ambiwidth=single
+set laststatus=2
 
 colors monokai
